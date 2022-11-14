@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -49,23 +50,63 @@ public class FirsTtest
 
     @Test
     public void test()
+
+
     {
-        System.out.println();
+
+        step1();
+        step2();
+        step3();
+        step4();
+        step5();
+        step6();
+        step7();
+        step8();
+        step9();
+
+
+    }
+
+    @Step("Авторизация")
+    private void step1(){
         loginInput.should(Condition.visible).val("demo");
         passwordInput.should(Condition.visible).val("demo");
         loginBtn.should(Condition.visible).click();
         BtnId.should(Condition.visible).click();
-        OwerviewId.should(Condition.visible).getText().equals("ОБЗОР");
-        IndId.should(Condition.visible).getText().equals("СЧЕТА");
-        PayId.should(Condition.visible).getText().equals("ПЛАТЕЖИ И ПЕРЕВОДЫ");
-        CardId.should(Condition.visible).getText().equals("КАРТЫ");
-        DesId.should(Condition.visible).getText().equals("ВКЛАДЫ");
-        LonId.should(Condition.visible).getText().equals("КРЕДИТЫ");
-        ExtId.should(Condition.visible).getText().equals("ВАЛЮТА");
-        InsId.should(Condition.visible).getText().equals("СТРАХОВАНИЕ");
-
-        sleep(100000);
     }
+    @Step("Проверка кнопки 'Обзор'")
+    private void step2(){
+        OwerviewId.should(Condition.visible).getText().equals("ОБЗОР");
+    }
+    @Step("Проверка кнопки 'Счета'")
+    private void step3(){
+        IndId.should(Condition.visible).getText().equals("СЧЕТА");
+    }
+    @Step("Проверка кнопки 'Платежи и переводы'")
+    private void step4(){
+        PayId.should(Condition.visible).getText().equals("ПЛАТЕЖИ И ПЕРЕВОДЫ");
+    }
+    @Step("Проверка кнопки 'Карты'")
+    private void step5(){
+        CardId.should(Condition.visible).getText().equals("КАРТЫ");
+    }
+    @Step("Проверка кнопки 'Вклады'")
+    private void step6(){
+        DesId.should(Condition.visible).getText().equals("ВКЛАДЫ");
+    }
+    @Step("Проверка кнопки 'Кредиты'")
+    private void step7(){
+        LonId.should(Condition.visible).getText().equals("КРЕДИТЫ");
+    }
+    @Step("Проверка кнопки 'Валюта'")
+    private void step8(){
+        ExtId.should(Condition.visible).getText().equals("ВАЛЮТА");
+    }
+    @Step("Проверка кнопки 'Страхование'")
+    private void step9(){
+        InsId.should(Condition.visible).getText().equals("СТРАХОВАНИЕ");
+    }
+
 
     @AfterEach
     public void after()
